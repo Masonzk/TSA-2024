@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmnwo5bomk6ye"]
+[gd_scene load_steps=7 format=3 uid="uid://bmnwo5bomk6ye"]
 
 [ext_resource type="PackedScene" uid="uid://b2uuu5c7betfm" path="res://prefabs/player.tscn" id="1_4s3hj"]
 [ext_resource type="Texture2D" uid="uid://dghyuyc6ntx5x" path="res://textures/stars.png" id="1_c0ab2"]
 [ext_resource type="Texture2D" uid="uid://b8we7wfg6t0sf" path="res://textures/spritesheet.png" id="2_i53ah"]
+[ext_resource type="PackedScene" uid="uid://dit8bg4yifkmf" path="res://prefabs/room_transition.tscn" id="4_c081i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thucs"]
 texture = ExtResource("2_i53ah")
@@ -515,3 +516,5 @@ layer_0/tile_data = PackedInt32Array(458759, 327681, 0, 524295, 393217, 1, 58983
 
 [node name="Player" parent="." instance=ExtResource("1_4s3hj")]
 position = Vector2(142, 67)
+
+[node name="RoomTransition" parent="." instance=ExtResource("4_c081i")]

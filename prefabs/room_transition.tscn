@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dit8bg4yifkmf"]
+
+[node name="RoomTransition" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
