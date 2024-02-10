@@ -32,6 +32,8 @@ func _physics_process(delta):
 	$AnimationTree["parameters/conditions/idle"] = direction[-1] == Vector2.ZERO
 	
 	$AnimationTree["parameters/RUN/blend_position"] = direction[-1]
-	$AnimationTree["parameters/IDLE/blend_position"] = direction[-1]
+	
+	if direction[-1] != Vector2.ZERO:
+		$AnimationTree["parameters/IDLE/blend_position"] = direction[-1]
 	
 	move_and_slide()
