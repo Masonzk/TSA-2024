@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 75
+const SPEED = 50
 
 var direction = [Vector2.ZERO]
 
@@ -28,6 +28,9 @@ func _physics_process(delta):
 		
 	velocity = direction[-1] * SPEED
 	
+	if $AnimationTree.get("parameters/playback").get_current_node() == "ATTACK":
+		return
+	
 	$AnimationTree["parameters/conditions/moving"] = direction[-1] != Vector2.ZERO
 	$AnimationTree["parameters/conditions/idle"] = direction[-1] == Vector2.ZERO
 	
@@ -35,5 +38,14 @@ func _physics_process(delta):
 	
 	if direction[-1] != Vector2.ZERO:
 		$AnimationTree["parameters/IDLE/blend_position"] = direction[-1]
+		$AnimationTree["parameters/ATTACK/blend_position"] = direction[-1]
+		
+		if direction[-1] == Vector2.LEFT: $SwordHitbox.rotation_degrees = 270
+		if direction[-1] == Vector2.UP: $SwordHitbox.rotation_degrees = 0
+		if direction[-1] == Vector2.RIGHT: $SwordHitbox.rotation_degrees = 90
+		if direction[-1] == Vector2.DOWN: $SwordHitbox.rotation_degrees = 180
 	
+	if Input.is_action_just_pressed("attack"):
+		$AnimationTree["parameters/conditions/attacking"] = true
+		
 	move_and_slide()
