@@ -29,7 +29,7 @@ tracks/1/path = NodePath("AnimationTree:parameters/conditions/attacking")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -69,7 +69,7 @@ tracks/1/path = NodePath("AnimationTree:parameters/conditions/attacking")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -109,7 +109,7 @@ tracks/1/path = NodePath("AnimationTree:parameters/conditions/attacking")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -149,7 +149,7 @@ tracks/1/path = NodePath("AnimationTree:parameters/conditions/attacking")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -427,9 +427,9 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(67, -74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5n3r"]
-size = Vector2(17, 8)
+size = Vector2(8.50001, 8)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_dbfgv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -468,9 +468,11 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="SwordHitbox" type="Area2D" parent="."]
+collision_layer = 129
+collision_mask = 129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHitbox"]
-position = Vector2(0, -9)
+position = Vector2(-2.66661e-05, -13.25)
 rotation = 1.57079
 shape = SubResource("RectangleShape2D_n5n3r")
 disabled = true

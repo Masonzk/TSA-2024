@@ -62,7 +62,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dttl"]
 radius = 6.0
 
-[node name="Frog" type="Area2D" groups=["border"]]
+[node name="Frog" type="Area2D" groups=["border", "enemy"]]
 collision_layer = 128
 collision_mask = 128
 script = ExtResource("1_hx0f7")
