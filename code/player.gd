@@ -34,7 +34,7 @@ func _physics_process(delta):
 		var area = $SwordHitbox.get_overlapping_areas()
 		print(area)
 		if area[0].is_in_group("enemy"):
-			area[0].queue_free()
+			area[0].get_node("AnimationPlayer").play("die")
 			
 	if $AnimationTree.get("parameters/playback").get_current_node() == "ATTACK":
 		return

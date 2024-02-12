@@ -2,7 +2,7 @@ extends Area2D
 
 var directions = [Vector2.UP, Vector2.DOWN, Vector2.RIGHT, Vector2.LEFT]
 
-var direction = Vector2.ZERO
+@export var direction = Vector2.ZERO
 var angle_to = 0
 @onready var current_position = position
 
@@ -10,6 +10,8 @@ func _ready():
 	_on_timer_timeout()
 	
 func _process(delta):
+	if $AnimationPlayer.current_animation == "die":
+		return
 	$RayCast2D.position = position
 	rotation = move_toward(rotation, angle_to, 0.5)
 	position = position.move_toward(current_position+direction*16, 0.25)
